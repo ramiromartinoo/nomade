@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Favoritos — NÓMADE</title>
+  <meta name="description" content="Las prendas que guardaste en NÓMADE.">
+  <meta name="theme-color" content="#0D0D0D">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230D0D0D'/%3E%3Crect x='11' y='11' width='10' height='10' fill='%23C8FF2E' transform='rotate(45 16 16)'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body data-pagina="favoritos">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <div id="barra-demo"></div>
+  <header id="header"></header>
+  <div id="marquee"></div>
+
+  <main id="contenido">
+    <section class="pagina-head">
+      <div class="wrap">
+        <nav class="migas" aria-label="Ruta"><a href="index.html">Inicio</a><span aria-hidden="true">/</span><span>Favoritos</span></nav>
+        <h1>Favoritos</h1>
+        <p id="sub-favs"></p>
+      </div>
+    </section>
+    <div class="wrap" style="padding-top:40px;padding-bottom:120px">
+      <div class="grilla" id="grilla-favs"></div>
+    </div>
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script src="js/productos.js"></script>
+  <script src="js/logica.js"></script>
+  <script src="js/tienda.js"></script>
+  <script>
+    (function () {
+      var T = window.Tienda;
+      function render() {
+        var favs = T.getFavoritos().map(T.producto).filter(Boolean);
+        document.getElementById('sub-favs').textContent = favs.length ? favs.length + (favs.length === 1 ? ' prenda guardada' : ' prendas guardadas') : '';
+        document.getElementById('grilla-favs').innerHTML = favs.length
+          ? favs.map(T.tarjetaProducto).join('')
+          : '<div class="vacio" style="grid-column:1/-1"><p>Todavía no guardaste nada. Tocá el corazón en cualquier prenda para tenerla a mano acá.</p><a class="btn btn--acento" href="catalogo.html">Ver productos</a></div>';
+      }
+      document.addEventListener('favoritos:cambio', render);
+      render();
+    })();
+  </script>
+</body>
+</html>

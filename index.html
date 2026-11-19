@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NÓMADE — Ropa streetwear | Tienda online</title>
+  <meta name="description" content="Remeras, buzos, cargos y camperas streetwear. Envío gratis desde $80.000 y 3 cuotas sin interés. Tienda demo creada por WebNova.">
+  <meta name="theme-color" content="#0D0D0D">
+  <meta property="og:title" content="NÓMADE — Ropa streetwear">
+  <meta property="og:description" content="Remeras, buzos, cargos y camperas streetwear. Envío gratis desde $80.000.">
+  <meta property="og:image" content="img/hero.jpg">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230D0D0D'/%3E%3Crect x='11' y='11' width='10' height='10' fill='%23C8FF2E' transform='rotate(45 16 16)'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="img/hero.jpg">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body data-pagina="inicio">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <div id="barra-demo"></div>
+  <header id="header"></header>
+  <div id="marquee"></div>
+
+  <main id="contenido">
+    <section class="hero" aria-labelledby="hero-titulo">
+      <img class="hero__img" src="img/hero.jpg" alt="Dos chicos con buzo y remera oversize negros contra el cielo" width="1800" height="1200" fetchpriority="high">
+      <div class="wrap hero__in" data-enter>
+        <p class="eyebrow" style="color:#fff">Drop 07 · Invierno 2026</p>
+        <h1 id="hero-titulo">Ropa para <em>la calle</em></h1>
+        <div class="hero__bajo">
+          <p>Buzos de frisa pesada, cargos y camperas en corte oversize. <strong>Envío gratis desde $80.000</strong> y 3 cuotas sin interés.</p>
+          <div class="hero__ctas">
+            <a class="btn btn--acento" href="catalogo.html">Ver la colección <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="btn btn--borde" href="#lo-nuevo">Lo nuevo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="beneficios" aria-label="Beneficios">
+      <div class="wrap beneficios__in" id="beneficios"></div>
+    </section>
+
+    <section class="seccion" aria-labelledby="cats-titulo">
+      <div class="wrap">
+        <div class="seccion__head">
+          <div><p class="eyebrow">Categorías</p><h2 id="cats-titulo" style="margin-top:12px">Armá tu fit</h2></div>
+          <a class="link" href="catalogo.html">Ver todo el catálogo</a>
+        </div>
+        <div class="cats" id="cats"></div>
+      </div>
+    </section>
+
+    <section class="seccion" id="lo-nuevo" aria-labelledby="nuevo-titulo" style="padding-top:0">
+      <div class="wrap">
+        <div class="seccion__head">
+          <div><p class="eyebrow">Recién llegado</p><h2 id="nuevo-titulo" style="margin-top:12px">Lo nuevo</h2>
+          <p>Las prendas que entraron con el Drop 07. Tiradas cortas: cuando se agota un talle, no vuelve.</p></div>
+          <a class="link" href="catalogo.html">Ver todos los productos</a>
+        </div>
+        <div class="grilla" id="grilla-nuevo"></div>
+      </div>
+    </section>
+
+    <section class="drop" aria-labelledby="drop-titulo">
+      <div class="wrap drop__in">
+        <div class="drop__txt">
+          <span class="drop__num" aria-hidden="true">07</span>
+          <h2 id="drop-titulo">Camperas para el <span>invierno</span></h2>
+          <p>Coach de nylon, puffer inflada y varsity con parches bordados. Tres camperas pensadas para durar más de una temporada.</p>
+          <a class="btn" href="catalogo.html?cat=camperas">Ver camperas</a>
+        </div>
+        <div class="drop__fotos">
+          <img src="img/drop.jpg" alt="Chico con campera negra y amarilla frente a una pared con afiches" loading="lazy" width="900" height="1350">
+          <img src="img/banner.jpg" alt="Dos personas con ropa urbana sentadas sobre el capó de un auto" loading="lazy" width="1600" height="1067">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script src="js/productos.js"></script>
+  <script src="js/logica.js"></script>
+  <script src="js/tienda.js"></script>
+  <script src="js/inicio.js"></script>
+</body>
+</html>

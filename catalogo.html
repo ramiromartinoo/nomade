@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Catálogo — NÓMADE</title>
+  <meta name="description" content="Remeras, buzos, pantalones cargo y camperas streetwear. Filtrá por talle, color y precio.">
+  <meta name="theme-color" content="#0D0D0D">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230D0D0D'/%3E%3Crect x='11' y='11' width='10' height='10' fill='%23C8FF2E' transform='rotate(45 16 16)'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body data-pagina="catalogo">
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <div id="barra-demo"></div>
+  <header id="header"></header>
+  <div id="marquee"></div>
+
+  <main id="contenido">
+    <section class="pagina-head">
+      <div class="wrap">
+        <nav class="migas" aria-label="Ruta"><a href="index.html">Inicio</a><span aria-hidden="true">/</span><span id="miga-actual">Catálogo</span></nav>
+        <h1 id="titulo-cat">Todo</h1>
+        <p id="sub-cat">Remeras, buzos, pantalones y camperas de la temporada.</p>
+      </div>
+    </section>
+
+    <div class="wrap catalogo">
+      <aside class="filtros" id="filtros" aria-label="Filtros">
+        <div class="filtros__head">
+          <h2>Filtrar</h2>
+          <button class="icono-btn" type="button" id="cerrar-filtros" aria-label="Cerrar filtros"></button>
+        </div>
+        <div class="filtros__grupo">
+          <h2 id="f-cat">Categoría</h2>
+          <div class="cat-radio" role="radiogroup" aria-labelledby="f-cat" id="f-cats"></div>
+        </div>
+        <div class="filtros__grupo">
+          <h2 id="f-talle">Talle</h2>
+          <div class="chips" role="group" aria-labelledby="f-talle" id="f-talles"></div>
+        </div>
+        <div class="filtros__grupo">
+          <h2 id="f-color">Color</h2>
+          <div class="chips" role="group" aria-labelledby="f-color" id="f-colores"></div>
+        </div>
+        <div class="filtros__grupo">
+          <h2>Precio</h2>
+          <div class="filtros__precio">
+            <div class="campo"><label for="f-min">Desde</label><input class="input" id="f-min" type="number" inputmode="numeric" min="0" step="1000" placeholder="$0"></div>
+            <div class="campo"><label for="f-max">Hasta</label><input class="input" id="f-max" type="number" inputmode="numeric" min="0" step="1000" placeholder="$100.000"></div>
+          </div>
+        </div>
+        <button class="link" type="button" id="limpiar" style="justify-self:start;background-color:transparent;border:0;color:var(--ink);cursor:pointer">Limpiar filtros</button>
+        <div class="filtros__ver"><button class="btn btn--acento btn--bloque" type="button" id="ver-res">Ver resultados</button></div>
+      </aside>
+
+      <div>
+        <div class="barra-res">
+          <p id="contador" role="status" style="margin:0;font-weight:600"></p>
+          <div class="barra-res__der">
+            <button class="btn btn--borde btn-filtrar" type="button" id="abrir-filtros" aria-controls="filtros" aria-expanded="false"></button>
+            <label class="visually-hidden" for="orden">Ordenar por</label>
+            <select class="select" id="orden">
+              <option value="relevancia">Relevancia</option>
+              <option value="precio-asc">Menor precio</option>
+              <option value="precio-desc">Mayor precio</option>
+              <option value="nombre">Nombre (A-Z)</option>
+            </select>
+          </div>
+        </div>
+        <div class="grilla" id="grilla"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script src="js/productos.js"></script>
+  <script src="js/logica.js"></script>
+  <script src="js/tienda.js"></script>
+  <script src="js/catalogo.js"></script>
+</body>
+</html>
